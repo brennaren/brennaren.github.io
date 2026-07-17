@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brenna Ren</title>
-  <meta name="description" content="Brenna Ren — Yale CS & Applied Math.">
+  <meta name="description" content="Brenna Ren — Yale CS & Math.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
       --font-b:  'Outfit', sans-serif;
       --nav-h:   62px;
       --px:      clamp(24px, 5vw, 80px);
-      --py:      clamp(80px, 10vw, 130px);
+      --py:      clamp(56px, 7vw, 92px);
       --r:       14px;
     }
 
@@ -80,6 +80,8 @@
     }
     .nav-links a:hover { color: var(--blue); }
     .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--blue); }
+    .nav-links a.active::after { width: 100%; }
 
     .nav-toggle {
       display: none; flex-direction: column; gap: 5px;
@@ -159,7 +161,7 @@
       font-size: clamp(1.05rem, 1.6vw, 1.2rem);
       font-weight: 300; color: var(--ink-2);
       line-height: 1.80; max-width: 420px;
-      margin-bottom: 34px;
+      margin-bottom: 26px;
     }
     .hero-socials { display: flex; gap: 10px; }
     .hsoc {
@@ -206,7 +208,7 @@
     }
     .curr-header {
       display: flex; align-items: center; gap: 8px;
-      margin-bottom: 26px;
+      margin-bottom: 18px;
     }
     .curr-dot {
       width: 7px; height: 7px; border-radius: 50%;
@@ -222,11 +224,11 @@
       letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--ink-3);
     }
-    .curr-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .curr-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
     .curr-list li { display: flex; flex-direction: column; gap: 3px; }
     .curr-key {
-      font-size: 0.75rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
+      font-size: 0.9rem; font-weight: 500;
+      letter-spacing: 0.01em; text-transform: lowercase;
       color: var(--blue);
     }
     .curr-val { font-size: 1.05rem; color: var(--ink); line-height: 1.4; }
@@ -287,8 +289,8 @@
       font-size: clamp(2rem, 4vw, 3.4rem);
       font-weight: 600; line-height: 1.1;
       letter-spacing: -0.02em;
-      color: var(--navy); margin-bottom: 50px;
-      position: relative; padding-bottom: 22px;
+      color: var(--navy); margin-bottom: 32px;
+      position: relative; padding-bottom: 16px;
     }
     .s-heading::after {
       content: '';
@@ -306,7 +308,7 @@
     .s-subtitle {
       font-size: 0.98rem; font-weight: 300;
       color: var(--ink-3); font-style: italic;
-      margin-top: -36px; margin-bottom: 52px;
+      margin-top: -22px; margin-bottom: 34px;
       letter-spacing: 0.01em; display: block;
     }
 
@@ -319,13 +321,13 @@
     /* ── PROJECTS ── */
 
     .projects-grid {
-      display: grid; grid-template-columns: repeat(2,1fr); gap: 22px;
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 18px;
     }
     .project-card {
       background: #fff;
       border: 1.5px solid rgba(26,45,79,0.07);
       border-radius: 18px 15px 17px 16px;
-      padding: 30px 28px;
+      padding: 24px 24px;
       position: relative; overflow: hidden;
       transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
       will-change: transform;
@@ -345,7 +347,7 @@
       box-shadow: 3px 6px 0 rgba(26,45,79,0.07), 0 18px 44px rgba(26,45,79,0.09);
       border-color: rgba(26,45,79,0.12);
     }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 16px; margin-bottom: 14px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; margin-bottom: 11px; }
     .tag {
       font-size: 0.69rem; font-weight: 500;
       padding: 3px 9px; border-radius: 100px;
@@ -362,10 +364,10 @@
     }
     .project-sub {
       font-size: 0.79rem; color: var(--ink-3);
-      margin-bottom: 13px; font-weight: 400;
+      margin-bottom: 10px; font-weight: 400;
     }
     .project-desc {
-      font-size: 0.91rem; line-height: 1.72;
+      font-size: 0.91rem; line-height: 1.62;
       color: var(--ink-2); margin-bottom: 0;
     }
     .project-link {
@@ -404,7 +406,7 @@
     }
     .about-body p {
       font-size: clamp(0.95rem, 1.3vw, 1.07rem);
-      line-height: 1.85; color: var(--ink-2); margin-bottom: 18px;
+      line-height: 1.72; color: var(--ink-2); margin-bottom: 14px;
     }
     .about-body p:last-child { margin-bottom: 0; }
     .about-body strong { color: var(--ink); font-weight: 500; }
@@ -466,7 +468,7 @@
     #contact .section-inner { text-align: left; }
     .contact-note {
       font-size: 1.35rem; font-weight: 300; color: var(--ink-2);
-      line-height: 1.75; margin-bottom: 38px; margin-top: -20px;
+      line-height: 1.75; margin-bottom: 26px; margin-top: -14px;
       max-width: 560px;
     }
     .contact-links {
@@ -503,7 +505,7 @@
       background: transparent;
       position: relative; z-index: 1;
       border-top: 1px solid rgba(26,45,79,0.07);
-      padding: 24px var(--px); text-align: center;
+      padding: 18px var(--px); text-align: center;
       font-size: 0.8rem; color: var(--ink-3);
     }
 
@@ -614,24 +616,24 @@
         </div>
         <ul class="curr-list">
           <li>
-            <span class="curr-key">interning at</span>
+            <span class="curr-key">interning at…</span>
             <span class="curr-val">College Kickstart · Data Research</span>
           </li>
           <li>
-            <span class="curr-key">interested in</span>
+            <span class="curr-key">interested in…</span>
             <span class="curr-val">Robotics, Autonomous Systems, AI</span>
           </li>
           <li>
-            <span class="curr-key">learning · spring 2026</span>
+            <span class="curr-key">learning · spring 2026…</span>
             <span class="curr-val"><span id="curr-course" class="curr-course">Differential Equations</span></span>
           </li>
           <li>
-            <span class="curr-key">baking</span>
+            <span class="curr-key">baking…</span>
             <span class="curr-val">Black Sesame Butter Mochi</span>
           </li>
           <li>
-            <span class="curr-key">reading</span>
-            <span class="curr-val">Never Split the Difference by Chris Voss</span>
+            <span class="curr-key">reading…</span>
+            <span class="curr-val"><em>Never Split the Difference</em> by Chris Voss</span>
           </li>
         </ul>
       </div>
@@ -753,7 +755,7 @@
         Mathematics.
       </p>
       <p>
-        In high school, I led my school's FIRST Robotics team as President
+        In high school, I led my school's FIRST Robotics team as Executive President
         and spearheaded the development of our robot's software. I'm interested in the
         intersection of AI and robotics, and I'm excited to explore opportunities in 
         these fields!
@@ -835,9 +837,9 @@
   <div class="section-inner">
     <h2 class="s-heading">Contact</h2>
     <span class="s-subtitle">let's work on something together</span>
-    <p class="contact-note">
+    <!-- <p class="contact-note">
       Always open to new opportunities, research collaborations, and creative projects.
-    </p>
+    </p> -->
     <div class="contact-links">
       <a href="mailto:brenna.c.ren@gmail.com" class="clink clink-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1116,6 +1118,29 @@ links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   toggle.classList.remove('open');
   toggle.setAttribute('aria-expanded', 'false');
 }));
+
+/* ══════════════════════════════
+   ACTIVE NAV LINK ON SCROLL
+══════════════════════════════ */
+(function () {
+  const navAnchors = Array.from(links.querySelectorAll('a'));
+  const sections = navAnchors
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  const setActive = id => {
+    navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+  sections.forEach(sec => observer.observe(sec));
+})();
 </script>
 </body>
 </html>
