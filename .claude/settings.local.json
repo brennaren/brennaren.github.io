@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(open *)",
-      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=\"/private/tmp/claude-501/-Users-brennaren-Documents-Projects-brenna-website/5d08b32d-6300-4c9f-8618-4c81f0853dad/scratchpad/full.png\" --window-size=1400,6000 --virtual-time-budget=3000 http://localhost:8010/index.html)"
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --screenshot=\"/private/tmp/claude-501/-Users-brennaren-Documents-Projects-brenna-website/5d08b32d-6300-4c9f-8618-4c81f0853dad/scratchpad/full.png\" --window-size=1400,6000 --virtual-time-budget=3000 http://localhost:8010/index.html)",
+      "Skill(run)",
+      "Bash(lsof -ti:8791 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)"
     ]
   }
 }

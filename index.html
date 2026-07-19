@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brenna Ren</title>
   <meta name="description" content="Brenna Ren — Yale CS & Math.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23ECC5B5'/%3E%3Cstop offset='100%25' stop-color='%23C8D5EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='20' ry='17' fill='url(%23g)'/%3E%3Ctext x='31' y='43' font-family='Georgia, serif' font-style='italic' font-weight='700' font-size='28' fill='%231A2D4F' text-anchor='middle'%3EBR%3C/text%3E%3Ccircle cx='49' cy='16' r='4' fill='%23C4849A'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -320,8 +321,11 @@
 
     /* ── PROJECTS ── */
 
+    #projects .section-inner {
+      max-width: 1300px;
+    }
     .projects-grid {
-      display: grid; grid-template-columns: repeat(2,1fr); gap: 18px;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 18px;
     }
     .project-card {
       background: #fff;
@@ -361,6 +365,7 @@
     .project-name {
       font-family: var(--font-d); font-size: 1.2rem; font-weight: 600;
       letter-spacing: -0.01em; color: var(--navy); margin-bottom: 3px;
+      padding-right: 20px;
     }
     .project-sub {
       font-size: 0.79rem; color: var(--ink-3);
@@ -381,9 +386,10 @@
 
     /* ── ABOUT ── */
     #about .section-inner {
+      max-width: 1300px;
       display: grid;
-      grid-template-columns: 2fr 3fr;
-      gap: 72px;
+      grid-template-columns: minmax(280px, 320px) 1fr;
+      gap: 48px;
       align-items: start;
     }
     .about-left {
@@ -397,7 +403,7 @@
       font-style: italic;
     }
     .about-photo {
-      width: 100%; max-width: 210px;
+      width: 100%; max-width: 240px;
       border-radius: 14px 11px 16px 12px;
       object-fit: cover; aspect-ratio: 3/4;
       display: block; margin-top: 22px;
@@ -465,7 +471,7 @@
     .c-dot.active { background: #fff; transform: scale(1.4); }
 
     /* ── CONTACT ── */
-    #contact .section-inner { text-align: left; }
+    #contact .section-inner { max-width: 1300px; text-align: left; }
     .contact-note {
       font-size: 1.35rem; font-weight: 300; color: var(--ink-2);
       line-height: 1.75; margin-bottom: 26px; margin-top: -14px;
@@ -518,6 +524,7 @@
       #about .section-inner { grid-template-columns: 1fr; gap: 28px; }
       .about-left { position: static; }
       .carousels-row { grid-template-columns: 1fr; gap: 40px; }
+      .projects-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 768px) {
       .nav-links {
@@ -654,40 +661,19 @@
 
     <div class="projects-grid">
 
-      <div class="project-card" style="--c:#7C3AED">
-        <h3 class="project-name">RBDGuard</h3>
-        <p class="project-sub">Independent Research · 2025 - 2026</p>
-        <p class="project-desc">
-          Improved RBD diagnostic accuracy from 80% to 97% by designing an unsupervised 
-          deep learning model in Tensorflow/Keras to detect the condition from ECG data. 
-          Presented at the 23rd IEEE/ACIS SERA conference and first-author publication in 
-          Springer SCIS (top 15 papers).
-        </p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Tensorflow</span>
-          <span class="tag">Keras</span>
-          <span class="tag">Unsupervised ML</span>
-        </div>
-        <a href="https://github.com/brennaren/RBDGuard" target="_blank" rel="noopener" class="project-link">
-          Code
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </a>
-      </div>
-
       <div class="project-card" style="--c:#059669">
         <h3 class="project-name">FRC Robot Code</h3>
         <p class="project-sub"> FRC 1072: Harker Robotics · 2023 - 2026</p>
         <p class="project-desc">
-          20K LOC Java control codebase (150+ personal commits) with tuned PID/motion-profiling 
-          closed-loop control and a Kalman filter fusing odometry, gyro, and vision data for 
-          real-time autonomous navigation, cutting match cycle times ~20%.
+          20K LOC Java codebase (150+ personal commits) with tuned PID/motion-profiling control
+          and a Kalman filter fusing odometry, gyro, and vision data for pose estimation and 
+          auto-alignment, cutting match cycle times ~20%.
         </p>
         <div class="project-tags">
           <span class="tag">Java</span>
           <span class="tag">Control Systems</span>
           <span class="tag">Pose Estimation</span>
-          <span class="tag">Autonomous Navigation</span>
+          <span class="tag">Git</span>
         </div>
         <a href="https://github.com/HarkerRobo/RoboCode2026" target="_blank" rel="noopener" class="project-link">
           2026 REBUILT Code
@@ -703,9 +689,9 @@
         <h3 class="project-name">AI Prediction of Polymer Thin Film Thickness</h3>
         <p class="project-sub">Garcia Research Scholar: Stony Brook University · 2024 - 2026</p>
         <p class="project-desc">
-          Developed an ML model that quantified polydispersity effects on polystyrene thin-film 
-          thickness. Analyzed 300+ experimental samples with Python and statistical modeling. Published 
-          first-author manuscript in MRS Communications and oral presentation at MRS Fall 2024.
+          Developed an ML model quantifying polydispersity effects on polystyrene thin-film
+          thickness across 300+ experimental samples. Published first-author in MRS Communications
+          and presented at MRS Fall 2024.
         </p>
         <div class="project-tags">
           <span class="tag">Python</span>
@@ -718,13 +704,50 @@
         </a>
       </div>
 
+      <div class="project-card" style="--c:#7C3AED">
+        <h3 class="project-name">RBDGuard</h3>
+        <p class="project-sub">Independent Research · 2025 - 2026</p>
+        <p class="project-desc">
+          Improved RBD diagnostic accuracy from 80% to 97% with an unsupervised deep learning
+          model that detects the condition from ECG data. Presented at IEEE/ACIS SERA and published
+          first-author in Springer SCIS (top 15 papers).
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Tensorflow</span>
+          <span class="tag">Keras</span>
+          <span class="tag">Unsupervised ML</span>
+        </div>
+        <a href="https://github.com/brennaren/RBDGuard" target="_blank" rel="noopener" class="project-link">
+          Code
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+
+      <div class="project-card" style="--c:#D97706">
+        <h3 class="project-name">Pascal-Subset Compiler &amp; Interpreter</h3>
+        <p class="project-sub">ATCS: Compilers &amp; Interpreters · 2024</p>
+        <p class="project-desc">
+          Full compiler and AST-walking interpreter in Java for a Pascal subset, with a
+          hand-coded scanner, recursive descent parser, semantic analysis, and MIPS code generation.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Java</span>
+          <span class="tag">MIPS Assembly</span>
+        </div>
+        <a href="https://github.com/brennaren/CompilersInterpreters" target="_blank" rel="noopener" class="project-link">
+          Code
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+
       <div class="project-card" style="--c:#0891B2">
         <h3 class="project-name">Quantum Key Distribution Protocol Simulation</h3>
         <p class="project-sub">Independent Research · 2023 - 2024</p>
         <p class="project-desc">
-          A QKD protocol simulator built in Python/Qiskit on IBM's Quantum Platform, 
-          comparing error rates across quantum key distribution protocols in ideal vs. 
-          noisy conditions. Confirmed theoretical QBER predictions held even in noisy channels.
+          QKD protocol simulator in Python/Qiskit on IBM's Quantum Platform, comparing
+          error rates across protocols in ideal vs. noisy channels and confirming theoretical
+          QBER predictions held.
         </p>
         <div class="project-tags">
           <span class="tag">Python</span>
