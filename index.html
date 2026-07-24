@@ -10,7 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Space Grotesk: geometric, techy headings  |  Outfit: clean readable body -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- loaded non-render-blocking: media=print doesn't block paint, then swaps to all once loaded -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -135,7 +137,9 @@
     }
 
     .hero-left {
-      animation: fade-up 0.9s cubic-bezier(0.16,1,0.3,1) both;
+      /* transform-only (no opacity) so the LCP text (h1.hero-name) paints
+         immediately instead of being invisible during the entrance animation */
+      animation: slide-up 0.9s cubic-bezier(0.16,1,0.3,1) both;
       animation-delay: 0.15s;
     }
     .hero-hi {
@@ -264,6 +268,10 @@
     @keyframes fade-up {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slide-up {
+      from { transform: translateY(24px); }
+      to   { transform: translateY(0); }
     }
 
     /* ── SECTION BASE ── */
